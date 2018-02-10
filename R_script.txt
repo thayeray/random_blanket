@@ -1,0 +1,61 @@
+library(ape)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))
+ozone.dists.inv <- 1/ozone.dists
+diag(ozone.dists.inv) <- 0
+Moran.I(ozone$Color,ozone.dists.inv)
+Moran.I(ozone$Color1,ozone.dists.inv)
+Moran.I(ozone$Color2,ozone.dists.inv)
+Moran.I(ozone$Color3,ozone.dists.inv)
+Moran.I(ozone$Color4,ozone.dists.inv)
+Moran.I(ozone$Color5,ozone.dists.inv)
+Moran.I(ozone$Color6,ozone.dists.inv)
+Moran.I(ozone$Color7,ozone.dists.inv)
+Moran.I(ozone$Color8,ozone.dists.inv)
+
+ozone<-read.table("http://www.ats.ucla.edu/stat/r/faq/ozone.csv", sep=",", header=T)
+ozone.dists <- as.matrix(dist(cbind(ozone$Lon, ozone$Lat)))
+ozone.dists.inv <- 1/ozone.dists
+diag(ozone.dists.inv) <- 0
+Moran.I(ozone$Av8top, ozone.dists.inv)
+
+library(ape)
+ozone<-read.table("R_30x30_tests.csv",sep=",",header=T)
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))
+ozone.dists.inv <- 1/ozone.dists
+diag(ozone.dists.inv) <- 0
+Moran.I(ozone$Color,ozone.dists.inv)
+Moran.I(ozone$Color1,ozone.dists.inv)
+Moran.I(ozone$Color2,ozone.dists.inv)
+
+
+# from ESRI to show Arc calculates the same as R
+library(maptools)  		
+library(spdep)   		
+library(sm)   			
+x = readShapePoly("CA_Polygons")  # reads in the shape file of California counties  	
+growth = x$GROWTH  		# assigns the polygon's GROWTH field to variable growth
+gal = read.gal("caQueen.gal", region.id = x$MYID) # reads the Geoda weight format into 
+# a sdep neighbor object (nb). Rook:share side, queen:share side or vertex. Queen used here.
+w = nb2listw(gal)  		# converts neighbor object to spatial weights (listw) object
+mt = moran.test(growth, w, alternative = "two.sided")
+
+
+# cell2nb(30,30,type="queen")
+library(spdep)
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)
+blanket.neighborList <- tri2nb(cbind(blanket$vPosition, blanket$hPosition))	
+blanket.spatialWeights <- nb2listw(blanket.neighborList)
+moran.test(blanket$Color, blanket.spatialWeights, alternative = "two.sided")
+
+library(spdep)
+blanket<-read.table("Checker4x4.csv",sep=",",header=T)
+blanket2<-read.table("LeftRight4x4.csv",sep=",",header=T)
+blanket.nbR<-read.gal("Checker4x4Rook.gal", region.id = blanket$cellID)
+blanket.nbQ<-read.gal("Checker4x4Queen.gal", region.id = blanket$cellID)
+blanket.spatialWeightsR <- nb2listw(blanket.nbR)
+blanket.spatialWeightsQ <- nb2listw(blanket.nbQ)
+moran.test(blanket$Color, blanket.spatialWeightsR, alternative = "two.sided")
+moran.test(blanket2$Color, blanket.spatialWeightsR, alternative = "two.sided")
+moran.test(blanket$Color, blanket.spatialWeightsQ, alternative = "two.sided")
+moran.test(blanket2$Color, blanket.spatialWeightsQ, alternative = "two.sided")

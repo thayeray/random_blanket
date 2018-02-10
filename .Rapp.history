@@ -1,0 +1,422 @@
+dir()
+setwd("/Users/thayer/Desktop")
+data<-read.table("Data for Week 4_forR.txt",header=TRUE)
+data
+attach(data)
+plot(data)
+summary()
+summary(data)
+plot(ssn,SEASON)
+dim(data)
+x<-cbind(data[,3:9])
+x
+summary(x)
+x<-cbind(data[,3:10])
+summary(x)
+? prcomp
+xPCA<-prcomp(x, scale = TRUE)
+attach(x)
+xPCA<-prcomp(x,scale=TRUE)
+x<-cbind(data[,4:10])
+summary(x)
+attach(x)
+xPCA<-prcomp(c,scale=TRUE)
+xPCA<-prcomp(x,scale=TRUE)
+xPCA
+xPCA$x
+xprime<-xpca$x
+xprime<-xPCA$x
+xprime
+cor(xprime)
+attach(xprime)
+lm1<lm(SEASON~xprime)
+lm1<-lm(SEASON~xprime)
+summary(lm1)
+lm1<-lm(SEASON~xprime$PC3)
+xprime<-data.frame(xprime)
+xprime
+lm2<-lm(SEASON~xprime$PC3)
+summary(lm2)
+lm2a<-lm(SEASON~xprime[,3])
+lm2a
+summary(lm2a)
+save(file="PCAclassRdata.Rdata")
+xpca$x
+xPCA$x
+xPCA$rotation
+xPCA$sdev
+varpca<-xPCA$sdev^2
+varpca
+perc_var<-varpca/sum(varpca)
+perc_var
+plot(perc_var)
+cumul<-c()
+cuml
+cumul
+for(i in 1:7){cumul[i]<-sum(perc_var[1:i])}
+cuml<-c()
+cumul
+lines(cuml)
+plot(cumul)
+line(cumul)
+lines(cumul)
+install.packages("ape")
+library(ape)
+end
+quit
+logout
+exit
+library(sdep)
+library(sp)
+library(MASS)
+library(nlme)
+library(coda)
+library(splines)
+library(boot)
+library(deldir)
+library(LearnBayes)
+import("sp")
+import(sp)
+install.packages("sp")
+install.packages("sdep")
+install.packages("sp")
+library
+library(methods)
+library(Matrix)
+install.packages("spdep")
+library(spdep)
+install.packages("maptools")
+install.packages("rgeos")
+install.packages("spatstat")
+install.packages("PBSmapping")
+install.packages("RColorBrewer")
+install.packages("maps")
+install.packages("gpclib")
+install.packages("RArcInfo")
+library(spstat)
+library(spatstat)
+beginner
+seq(0, sqrt(2)/6, by = 0.005)
+sqrt(2)/6
+ls()
+ls()
+ozone<-read.table("javaBlanket_v2_1385236006.csv",sep=",",header=T)
+ozone
+head(ozone,n=10)
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))
+ozone.dists.inv <- 1/ozone.dists
+diag(ozone.dists.inv) <- 0
+ozone.dists.inv
+ozone.dists.inv
+library(ape)
+Moran.I(ozone$Color,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)
+ozone
+Moran.I(ozone$ColorRedo,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$ColorRedo,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$ColorRedo,ozone.dists.inv)
+ozone<-read.table("http://www.ats.ucla.edu/stat/r/faq/ozone.csv", sep=",", header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$Lon, ozone$Lat)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Av8top, ozone.dists.inv)
+ozone
+ozone.dists
+min(ozone.dists)
+max(ozone.dists)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color0,ozone.dists.inv)#
+#
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)#
+#
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color2,ozone.dists.inv)#
+#
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color3,ozone.dists.inv)#
+#
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color4,ozone.dists.inv)#
+#
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color5,ozone.dists.inv)#
+#
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color6,ozone.dists.inv)#
+#
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color7,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color0,ozone.dists.inv)#
+#
+Moran.I(ozone$Color1,ozone.dists.inv)#
+#
+Moran.I(ozone$Color2,ozone.dists.inv)#
+#
+Moran.I(ozone$Color3,ozone.dists.inv)#
+#
+Moran.I(ozone$Color4,ozone.dists.inv)#
+#
+Moran.I(ozone$Color5,ozone.dists.inv)#
+#
+Moran.I(ozone$Color6,ozone.dists.inv)#
+#
+Moran.I(ozone$Color7,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)#
+#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)#
+Moran.I(ozone$Color1,ozone.dists.inv)#
+Moran.I(ozone$Color2,ozone.dists.inv)#
+Moran.I(ozone$Color3,ozone.dists.inv)#
+Moran.I(ozone$Color4,ozone.dists.inv)#
+Moran.I(ozone$Color5,ozone.dists.inv)#
+Moran.I(ozone$Color6,ozone.dists.inv)#
+Moran.I(ozone$Color7,ozone.dists.inv)#
+Moran.I(ozone$Color8,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007a.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+ozone<-read.table("javaBlanket_v2_1385236007.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color1,ozone.dists.inv)
+library(ape)#
+ozone<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)#
+Moran.I(ozone$Color1,ozone.dists.inv)#
+Moran.I(ozone$Color2,ozone.dists.inv)#
+Moran.I(ozone$Color3,ozone.dists.inv)
+library(ape)#
+ozone<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)#
+Moran.I(ozone$Color1,ozone.dists.inv)#
+Moran.I(ozone$Color2,ozone.dists.inv)#
+Moran.I(ozone$Color3,ozone.dists.inv)
+ozone.dists.inv
+ozone
+library(ape)#
+ozone<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+ozone.dists <- as.matrix(dist(cbind(ozone$hPosition, ozone$vPosition)))#
+ozone.dists.inv <- 1/ozone.dists#
+diag(ozone.dists.inv) <- 0#
+Moran.I(ozone$Color,ozone.dists.inv)#
+Moran.I(ozone$Color1,ozone.dists.inv)#
+Moran.I(ozone$Color2,ozone.dists.inv)#
+Moran.I(ozone$Color3,ozone.dists.inv)
+? moran.test
+? Moran.test
+library(spdep)   		#
+library(sm)
+? moran.test
+? read.gal
+library(maptools)
+nb7rt <- cell2nb(7, 7)#
+summary(nb7rt)
+neighborList <- cell2nb(30,30,type="queen")
+neighborList
+summary(neighborList)
+neighborList <- cell2nb(5,3,type="queen")
+summary(neighborList)
+neighborList[1]
+neighborList[2]
+neighborList[3]
+neighborList[4]
+neighborList[5]
+neighborList[1:10]
+neighborList[1:16]
+neighborList[1:17]
+neighborList[1:15]
+library(maptools)
+x = readShapePoly("CA_Polygons")  # reads in the shape file of California counties  	#
+growth = x$GROWTH  		# assigns the polygon's GROWTH field to variable growth#
+gal = read.gal("caQueen.gal", region.id = x$MYID) # reads the Geoda weight format into #
+# a sdep neighbor object (nb). Rook:share side, queen:share side or vertex. Queen used here.#
+w = nb2listw(gal)  		# converts neighbor object to spatial weights (listw) object#
+mt = moran.test(growth, w, alternative = "two.sided")
+mt
+growth
+gal
+w
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+neighborList <- cell2nb(30,30,type="queen")#
+spatialWeights <- nb2listw(neighborList)#
+moran.test(blanket$Color, spatialWeights, alternative = "two.sided")
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+neighborList <- cell2nb(30,30,type="queen")#
+spatialWeights <- nb2listw(neighborList)#
+moran.test(blanket$Color, spatialWeights, alternative = "two.sided")
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+neighborList <- cell2nb(30,30,type="queen")#
+spatialWeights <- nb2listw(neighborList)#
+moran.test(blanket$Color, spatialWeights, alternative = "two.sided")
+moran.test(blanket$Color1, spatialWeights, alternative = "two.sided")
+moran.test(blanket$Color2, spatialWeights, alternative = "two.sided")
+? 2nb
+?2nb
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+blanket.coords <- as.matrix(cbind(blanket$vPosition, blanket$hPosition))#
+blanket.neighborList <- tri2nb(blanket.coords)	#cell2nb(30,30,type="queen")#
+blanket.spatialWeights <- nb2listw(blanket.neighborList)#
+moran.test(blanket$Color, blanket.spatialWeights, alternative = "two.sided")
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+blanket.coords <- as.matrix(cbind(blanket$vPosition, blanket$hPosition))#
+blanket.neighborList <- tri2nb(blanket.coords)	#
+blanket.spatialWeights <- nb2listw(blanket.neighborList)#
+moran.test(blanket$Color, blanket.spatialWeights, alternative = "two.sided")
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+blanket.coords <- as.matrix(cbind(blanket$vPosition, blanket$hPosition))#
+blanket.neighborList <- tri2nb(blanket.coords)	#
+blanket.spatialWeights <- nb2listw(blanket.neighborList)#
+moran.test(blanket$Color1, blanket.spatialWeights, alternative = "two.sided")
+blanket.spatialWeights[1:10]
+blanket<-read.table("R_30x30_tests.csv",sep=",",header=T)#
+blanket.neighborList <- tri2nb(cbind(blanket$vPosition, blanket$hPosition))	#
+blanket.spatialWeights <- nb2listw(blanket.neighborList)#
+moran.test(blanket$Color, blanket.spatialWeights, alternative = "two.sided")
+blanket
+cell2nb(4,4,type="queen")
+nb4x4<-cell2nb(4,4,type="queen")
+nb4x4[1:16]

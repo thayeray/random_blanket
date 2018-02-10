@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="38" height="38" style="fill:rgb(217,3,159);"/>
+<rect x="40" y="0" width="38" height="38" style="fill:rgb(36,250,94);"/>
+<rect x="80" y="0" width="38" height="38" style="fill:rgb(217,3,159);"/>
+<rect x="120" y="0" width="38" height="38" style="fill:rgb(126,16,237);"/>
+<rect x="0" y="40" width="38" height="38" style="fill:rgb(127,237,16);"/>
+<rect x="40" y="40" width="38" height="38" style="fill:rgb(126,16,237);"/>
+<rect x="80" y="40" width="38" height="38" style="fill:rgb(36,94,250);"/>
+<rect x="120" y="40" width="38" height="38" style="fill:rgb(254,63,63);"/>
+<rect x="0" y="80" width="38" height="38" style="fill:rgb(217,159,3);"/>
+<rect x="40" y="80" width="38" height="38" style="fill:rgb(36,250,94);"/>
+<rect x="80" y="80" width="38" height="38" style="fill:rgb(217,159,3);"/>
+<rect x="120" y="80" width="38" height="38" style="fill:rgb(0,190,190);"/>
+<rect x="0" y="120" width="38" height="38" style="fill:rgb(36,250,94);"/>
+<rect x="40" y="120" width="38" height="38" style="fill:rgb(254,63,63);"/>
+<rect x="80" y="120" width="38" height="38" style="fill:rgb(126,16,237);"/>
+<rect x="120" y="120" width="38" height="38" style="fill:rgb(127,237,16);"/>
+<rect x="0" y="160" width="38" height="38" style="fill:rgb(0,190,190);"/>
+<rect x="40" y="160" width="38" height="38" style="fill:rgb(217,3,159);"/>
+<rect x="80" y="160" width="38" height="38" style="fill:rgb(0,190,190);"/>
+<rect x="120" y="160" width="38" height="38" style="fill:rgb(0,190,190);"/>
+<rect x="0" y="200" width="38" height="38" style="fill:rgb(126,16,237);"/>
+<rect x="40" y="200" width="38" height="38" style="fill:rgb(36,94,250);"/>
+<rect x="80" y="200" width="38" height="38" style="fill:rgb(36,94,250);"/>
+<rect x="120" y="200" width="38" height="38" style="fill:rgb(217,159,3);"/>
+<rect x="0" y="240" width="38" height="38" style="fill:rgb(127,237,16);"/>
+<rect x="40" y="240" width="38" height="38" style="fill:rgb(254,63,63);"/>
+<rect x="80" y="240" width="38" height="38" style="fill:rgb(217,3,159);"/>
+<rect x="120" y="240" width="38" height="38" style="fill:rgb(36,94,250);"/>
+</svg>

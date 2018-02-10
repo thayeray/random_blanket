@@ -1,0 +1,56 @@
+private void makeSliderPanel()			
+	{
+		sliderPanel = new JPanel();			// contained by input, contains the JSliders for controlling color				 
+		sliderPanel.setLayout(new FlowLayout());
+		sliderPanel.setBorder(new TitledBorder("Color Ramp"));
+		muteSharpSlider = new JSlider(JSlider.VERTICAL, 0, 100, 0);
+		colorAngleSlider = new JSlider(JSlider.VERTICAL, 0, 360, 0);
+		colorRangeSlider = new RangeSlider(0, 360);
+		colorRangeSliderUI = new RangeSliderUI(colorRangeSlider);
+		colorRangeSlider.updateUI(colorRangeSliderUI);
+		reverseColorRangeCB = new JCheckBox("Reverse color range");
+		
+		Container left = new Container();
+		left.setLayout(new BoxLayout(left, BoxLayout.Y_AXIS));
+		JLabel bright = new JLabel("Bright");
+		bright.setAlignmentX(CENTER_ALIGNMENT);
+		left.add(bright);
+		muteSharpSlider.setAlignmentX(CENTER_ALIGNMENT);
+		left.add(muteSharpSlider, left);
+		JLabel muted = new JLabel("Muted");
+		muted.setAlignmentX(CENTER_ALIGNMENT);
+		left.add(muted);
+		
+		Container center = new Container();
+		center.setLayout(new BoxLayout(center, BoxLayout.Y_AXIS));
+		JLabel shift1 = new JLabel("Shift");
+		shift1.setAlignmentX(CENTER_ALIGNMENT);
+		center.add(shift1);
+		colorAngleSlider.setAlignmentX(CENTER_ALIGNMENT);
+		center.add(colorAngleSlider);
+		JLabel shift2 = new JLabel("Colors");
+		shift2.setAlignmentX(CENTER_ALIGNMENT);
+		center.add(shift2);
+		
+		Container right = new Container();
+		right.setLayout(new BoxLayout(right, BoxLayout.Y_AXIS));
+		JLabel limit = new JLabel("Limit");
+		limit.setAlignmentX(CENTER_ALIGNMENT);
+		right.add(limit);
+		resetColorRangeSlider();		
+		right.add(colorRangeSlider);
+		JLabel colors = new JLabel("Colors");
+		colors.setAlignmentX(CENTER_ALIGNMENT);
+		right.add(colors);
+		
+		Container bottom = new Container();
+		bottom.setLayout(new BoxLayout(bottom, BoxLayout.X_AXIS));
+		reverseColorRangeCB.setAlignmentX(RIGHT_ALIGNMENT);;
+		
+		sliderPanel.add(left);
+		sliderPanel.add(Box.createRigidArea(new Dimension(10,40)));
+		sliderPanel.add(center);
+		sliderPanel.add(Box.createRigidArea(new Dimension(10,40)));
+		sliderPanel.add(right);
+		sliderPanel.add(bottom);
+	}

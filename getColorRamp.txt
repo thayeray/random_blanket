@@ -1,0 +1,81 @@
+	/** 
+	 *  Calculates and returns a color in a color ramp, for the specified color value and angle offset
+	 * @param value the integer corresponding to the i'th color. 
+	 * @param offset an integer between 0 and 360, which corresponds to an offset in degrees to the cosine function used
+	 *   				for determining the color ramp. 
+	 * @return a Color object for the corresponding value in the color ramp.
+	 */
+	private Color getColorRampColor(int value, int offset)
+	{	
+		Color col, altCol, setCol = new Color(0.5f, 0.5f, 0.5f);
+		int numColors = blanketToPlot.getColors();
+		int angle = 1;
+		double red, green, blue;
+		float forcedMuting = 0.8f;						// factor that ensures muting of the muted color ramp
+		double redAlt = 0, greenAlt = 0, blueAlt = 0;
+		 	
+		if (value <= numColors)
+		{	
+			if (numColors == 0)							
+			{	angle = value * 360;
+				divBy0ExcptCount++;
+				checkExceptionMessages();
+			}
+			// Muted Color Ramp:  this ramp is based on shifted cosine curves
+			//   This ramp is calculated by first converting value to an angle in degrees, scaled to its position in numColors.
+			//   The cosine is found for the angle (plus user offset) and converted from min -1 max 1 to min 0 max 1.
+			//   An additional offset of 120 or 240 degrees is added to green and blue so that you get color not gray.
+			//   The calculated value is then reduced by the forcedMuting factor to ensure that the ramp is always muted.
+			else angle = value * 360 / numColors;		
+    		red = Math.cos(Math.toRadians((double)angle + offset)) / 2.0 + 0.5;	 
+    		green = Math.cos(Math.toRadians((double)angle + offset + 240)) / 2.0 + 0.5; 
+    		blue = Math.cos(Math.toRadians((double)angle + offset + 120)) / 2.0 + 0.5;		
+    		col = new Color((float)red * forcedMuting, (float)green * forcedMuting, (float)blue * forcedMuting);
+    		 
+    		// Bright Color Ramp (Alt):  this ramp maximizes bright colors by using a function composed of 
+    		//   4 lines that coarsely approximate a cosine function.
+    		//   The 4 lines are : two horizontal (y = 0 and y = 255) and two diagonal that connect the horizontal lines.
+    		//   The calculation begins by scaling value to the range 0 to 12 based on its position in numColors.
+    		//   The same is done to the offset based on its position in degrees, and it is added to the scaled valueAlt.
+    		//   valueAlt is then fit to the function for each color.  As with Muted, the functions are shifted to avoid gray.
+    		double valueAlt = 12.0 * value / numColors;
+    		double offsetAlt = 12.0 * offset / 360;
+    		if (valueAlt + offsetAlt > 12)
+    			valueAlt = (valueAlt + offsetAlt) - 12;
+    		else valueAlt = valueAlt + offsetAlt;
+    		if(valueAlt >= 0 && valueAlt <= 2 || valueAlt >= 10 && valueAlt <= 12)  redAlt = 255;
+    			else if(valueAlt >= 4 && valueAlt <= 8)  redAlt = 0;
+    				else if(valueAlt > 2 && valueAlt < 4)  redAlt = valueAlt * -127.5 + 510;
+    					else if(valueAlt > 8 && valueAlt < 10)  redAlt = valueAlt * 127.5 - 1020;
+    		if(valueAlt >= 2 && valueAlt <= 6)  greenAlt = 255;
+    			else if(valueAlt == 0 || valueAlt >= 8 && valueAlt <= 12)  greenAlt = 0;
+    				else if(valueAlt > 0 && valueAlt < 2)  greenAlt = valueAlt * 127.5 + 0;
+    					else if(valueAlt > 6 && valueAlt < 8)  greenAlt = valueAlt * -127.5 + 1020;
+    		if(valueAlt >= 6 && valueAlt <= 10)  blueAlt = 255;
+    			else if(valueAlt >=0 && valueAlt <= 4)  blueAlt = 0;
+    				else if(valueAlt > 4 && valueAlt < 6)  blueAlt = valueAlt * 127.5 - 510;
+    					else if(valueAlt > 10 && valueAlt <= 12)  blueAlt = valueAlt * -127.5 + 1530;
+    		altCol = new Color((int)redAlt, (int)greenAlt, (int)blueAlt);
+ 
+       		// Bright (Alt) and Mute color ramps combined, by multiplying by proportionAlt.  Convert to float by dividing by 255
+    		float oneMinusPA = 1f - proportionAlt;
+			float setRed = (oneMinusPA * col.getRed() + proportionAlt * altCol.getRed()) / 255f;
+			float setGreen = (oneMinusPA * col.getGreen() + proportionAlt * altCol.getGreen())/255f;
+			float setBlue = (oneMinusPA * col.getBlue() + proportionAlt * altCol.getBlue())/255f;
+    		setCol = new Color(checkFloat(setRed), checkFloat(setGreen), checkFloat(setBlue)); 
+    		
+    		// assign Color object to array of Color objects
+    		try
+    		{	blanketColors[value] = setCol;
+    		}
+    		catch (ArrayIndexOutOfBoundsException exception)						
+    		{	System.out.println( "BlanketOutputPanel line 146: ");
+    			arrayExcptCount++;
+    			checkExceptionMessages();
+    		}
+    		catch (NullPointerException exception)
+    		{	
+    		}
+		} 
+    	return setCol;
+	}

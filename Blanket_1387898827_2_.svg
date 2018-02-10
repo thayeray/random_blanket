@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="38" height="38" style="fill:rgb(190,0,190);"/>
+<rect x="40" y="0" width="38" height="38" style="fill:rgb(254,63,63);"/>
+<rect x="80" y="0" width="38" height="38" style="fill:rgb(63,254,63);"/>
+<rect x="120" y="0" width="38" height="38" style="fill:rgb(63,63,254);"/>
+<rect x="160" y="0" width="38" height="38" style="fill:rgb(190,190,0);"/>
+<rect x="0" y="40" width="38" height="38" style="fill:rgb(63,63,254);"/>
+<rect x="40" y="40" width="38" height="38" style="fill:rgb(63,254,63);"/>
+<rect x="80" y="40" width="38" height="38" style="fill:rgb(190,190,0);"/>
+<rect x="120" y="40" width="38" height="38" style="fill:rgb(63,63,254);"/>
+<rect x="160" y="40" width="38" height="38" style="fill:rgb(254,63,63);"/>
+<rect x="0" y="80" width="38" height="38" style="fill:rgb(254,63,63);"/>
+<rect x="40" y="80" width="38" height="38" style="fill:rgb(190,0,190);"/>
+<rect x="80" y="80" width="38" height="38" style="fill:rgb(63,254,63);"/>
+<rect x="120" y="80" width="38" height="38" style="fill:rgb(0,190,190);"/>
+<rect x="160" y="80" width="38" height="38" style="fill:rgb(190,0,190);"/>
+<rect x="0" y="120" width="38" height="38" style="fill:rgb(190,0,190);"/>
+<rect x="40" y="120" width="38" height="38" style="fill:rgb(63,63,254);"/>
+<rect x="80" y="120" width="38" height="38" style="fill:rgb(0,190,190);"/>
+<rect x="120" y="120" width="38" height="38" style="fill:rgb(0,190,190);"/>
+<rect x="160" y="120" width="38" height="38" style="fill:rgb(190,190,0);"/>
+</svg>
